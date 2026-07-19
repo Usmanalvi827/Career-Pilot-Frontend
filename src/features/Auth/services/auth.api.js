@@ -43,7 +43,7 @@ export async function login({ email, password }) {
 
 export async function logout() {
   try {
-    const response = await api.get("http://localhost:3000/api/auth/logout");
+    const response = await api.get("/api/auth/logout");
 
     return response;
   } catch (error) {
@@ -53,8 +53,7 @@ export async function logout() {
 
 export async function getMe() {
   try {
-    const response = await api.get("http://localhost:3000/api/auth/get-me");
-
+    const response = await api.get("/api/auth/get-me");
     return response.data;
   } catch (error) {
     throw error;
