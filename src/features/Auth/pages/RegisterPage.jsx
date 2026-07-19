@@ -39,10 +39,6 @@ export default function RegisterPage() {
         password,
       });
       toast.success(data.message || "Registration successful!");
-      // FIX: the user is already logged in at this point (backend set the
-      // cookie, and handleRegister above updated the auth context), so
-      // send them straight to the dashboard instead of leaving them on
-      // the register page with no next step.
       navigate("/");
     } catch (error) {
       // Safely extract professional backend messages

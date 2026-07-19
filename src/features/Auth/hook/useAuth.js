@@ -32,11 +32,7 @@ export function useAuth() {
       password,
     });
 
-    // FIX: the backend already logs the new user in (sets the auth
-    // cookie) at the moment of registration. Before, this function never
-    // updated the auth context, so the app didn't "know" the user was
-    // logged in until a manual page refresh triggered getMe(). Now we
-    // update it immediately, same as handleLogin does.
+  
     setUsers(data.user);
 
     return data;
